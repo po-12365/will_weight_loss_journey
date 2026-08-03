@@ -1,0 +1,1397 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body {
+
+    font-family:
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+    background:#0b0b0b;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+
+.hero {
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.85)
+    ),
+
+    url("../images/gym-background.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+
+}
+
+
+/* gym light effect */
+
+.hero::before {
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(255,255,255,.25),
+        transparent 70%
+    );
+
+
+    top:10%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    filter:blur(30px);
+
+}
+
+
+
+/* hero text */
+
+.hero > * {
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+.hero-label {
+
+    letter-spacing:.5em;
+
+    font-size:13px;
+
+    color:#aaa;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.hero h1 {
+
+
+    font-size:
+
+    clamp(45px,6vw,90px);
+
+
+    line-height:1.05;
+
+
+    font-weight:800;
+
+
+    text-transform:uppercase;
+
+
+    background:
+
+    linear-gradient(
+        180deg,
+        white,
+        #777
+    );
+
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+
+    text-shadow:
+
+    0 20px 40px rgba(0,0,0,.8);
+
+
+}
+
+
+
+
+.hero-description {
+
+    max-width:650px;
+
+    margin-top:35px;
+
+    color:#ccc;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+
+.journey-section {
+
+
+    width:min(900px,90%);
+
+    margin:150px auto;
+
+
+}
+
+
+
+.section-title {
+
+
+    text-align:center;
+
+    margin-bottom:80px;
+
+
+}
+
+
+
+.section-title span {
+
+
+    letter-spacing:.4em;
+
+    color:#888;
+
+    font-size:12px;
+
+
+}
+
+
+
+.section-title h2 {
+
+
+    font-size:50px;
+
+    margin-top:20px;
+
+
+}
+
+
+
+/* =========================
+   ROUTINE CARD
+========================= */
+
+
+.routine-card {
+
+
+  background:
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.85)
+),
+url("/static/weightloss/images/2019.jpg");
+
+    padding:60px;
+
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+
+    0 30px 80px rgba(0,0,0,.7);
+
+
+    transform:
+    perspective(1000px)
+    rotateX(3deg);
+
+
+}
+
+
+
+.routine-card p {
+
+
+    color:#ccc;
+
+    line-height:2;
+
+    font-size:18px;
+
+    margin-bottom:30px;
+
+
+}
+
+.timeline {
+
+    position:relative;
+
+}
+
+
+.timeline-item {
+
+    background:#111;
+
+    padding:40px;
+
+    margin-bottom:40px;
+
+    border-radius:20px;
+
+}
+
+/* =========================
+   TRANSFORMATION GALLERY
+========================= */
+
+
+.transformation-section {
+
+    width:min(1000px,90%);
+
+    margin:140px auto;
+
+}
+
+
+
+.transformation-gallery {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2, 1fr);
+
+    gap:40px;
+
+}
+
+
+
+.transformation-card {
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    background:#111;
+
+    box-shadow:
+    0 30px 70px rgba(0,0,0,.7);
+
+    aspect-ratio:2 / 4;
+
+    transform:
+    perspective(1000px)
+    rotateY(2deg);
+
+    transition:.5s ease;
+
+}
+
+
+
+.transformation-card:hover {
+
+
+    transform:
+
+    perspective(1000px)
+    translateY(-15px)
+    rotateY(0deg);
+
+
+}
+
+
+
+.transformation-card img {
+
+
+    width:100%;
+
+    height:100%;
+
+
+    object-fit:cover;
+
+
+    object-position:center;
+
+
+    display:block;
+
+
+    transition:.8s ease;
+
+
+}
+
+
+
+.transformation-card:hover img {
+
+
+    transform:scale(1.08);
+
+
+}
+
+
+
+.photo-info {
+
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    right:0;
+
+
+    padding:35px;
+
+
+    background:
+
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,.9)
+    );
+
+
+}
+
+
+
+.photo-info h3 {
+
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+.photo-info p {
+
+
+    color:#ddd;
+
+    line-height:1.6;
+
+}
+
+.photo-info p {
+
+
+    color:#ddd;
+
+}
+
+body {
+
+    background:#080808;
+
+    color:white;
+
+}
+
+
+
+/* =========================
+   SMOOTH PAGE REVEAL
+========================= */
+
+
+.journey-section,
+.transformation-section,
+.intro,
+.routine-section {
+
+    animation:sectionReveal 1.2s ease forwards;
+
+}
+
+
+
+@keyframes sectionReveal {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* =========================
+   WHITE CONTRAST SECTIONS
+========================= */
+
+
+.intro {
+
+    background:#f5f5f5;
+
+    color:#111;
+
+    padding:80px;
+
+    border-radius:30px;
+
+
+}
+
+
+
+.intro-text p {
+
+    color:#444;
+
+}
+
+
+
+/* =========================
+   HERO EFFECT
+========================= */
+
+
+.hero {
+
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        rgba(255,255,255,.15),
+        transparent 45%
+    ),
+
+    #050505;
+
+
+}
+
+
+
+.hero h1 {
+
+
+    animation:titleFloat 1.5s ease;
+
+
+}
+
+
+
+@keyframes titleFloat {
+
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+/* =========================
+   CARD HOVER EFFECT
+========================= */
+
+
+.routine-card,
+.timeline-item,
+.transformation-card {
+
+
+    transition:
+
+    transform .5s ease,
+
+    box-shadow .5s ease;
+
+
+}
+
+
+
+.routine-card:hover,
+.timeline-item:hover {
+
+
+    transform:
+
+    translateY(-12px)
+
+    scale(1.02);
+
+
+    box-shadow:
+
+    0 40px 100px rgba(255,255,255,.15);
+
+
+}
+
+
+
+/* =========================
+   IMAGE HOVER
+========================= */
+
+
+.transformation-card {
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+.transformation-card img {
+
+
+    filter:
+
+    grayscale(30%);
+
+
+}
+
+
+
+.transformation-card:hover img {
+
+
+    transform:scale(1.12);
+
+
+    filter:
+
+    grayscale(0%);
+
+
+}
+
+
+
+/* =========================
+   PHOTO LIGHT EFFECT
+========================= */
+
+
+.transformation-card::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.25),
+
+    transparent
+
+    );
+
+
+    transform:translateX(-120%);
+
+
+    transition:.8s;
+
+
+}
+
+
+
+.transformation-card:hover::after {
+
+
+    transform:translateX(120%);
+
+
+}
+
+
+
+/* =========================
+   WEIGHT NUMBER STYLE
+========================= */
+
+
+.timeline-weight {
+
+
+    font-size:70px;
+
+
+    font-weight:900;
+
+
+    color:white;
+
+
+    letter-spacing:-3px;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.timeline-item:hover .timeline-weight {
+
+
+    transform:scale(1.1);
+
+
+}
+
+
+
+
+/* =========================
+   BACK TO TOP BUTTON
+========================= */
+
+
+.back-top-container {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:100px auto 60px;
+
+}
+
+
+
+.back-top {
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    width:180px;
+
+    height:55px;
+
+
+    border-radius:40px;
+
+
+    background:#000;
+
+
+    color:white;
+
+
+    border:1px solid white;
+
+
+    text-decoration:none;
+
+
+    font-size:14px;
+
+
+    letter-spacing:.2em;
+
+
+    text-transform:uppercase;
+
+
+    transition:.5s ease;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+/* light sweep effect */
+
+.back-top::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    top:0;
+
+    left:-100%;
+
+
+    width:100%;
+
+    height:100%;
+
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.5),
+
+    transparent
+
+    );
+
+
+    transition:.6s;
+
+
+}
+
+
+
+.back-top:hover::before {
+
+
+    left:100%;
+
+
+}
+
+
+
+.back-top:hover {
+
+
+    background:white;
+
+
+    color:black;
+
+
+    transform:translateY(-10px);
+
+
+    box-shadow:
+
+    0 20px 40px rgba(255,255,255,.2);
+
+
+}
+
+/* =========================
+   JOURNEY COVER MENU
+========================= */
+
+
+.journey-menu {
+
+
+    position:fixed;
+
+
+    top:40px;
+
+    left:40px;
+
+
+    z-index:999;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+
+    padding:25px;
+
+
+    background:
+
+    rgba(0,0,0,.65);
+
+
+    backdrop-filter:blur(10px);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.2);
+
+
+    border-radius:20px;
+
+
+}
+
+
+
+.journey-menu h3 {
+
+
+    color:white;
+
+
+    font-size:14px;
+
+
+    letter-spacing:.25em;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.journey-menu a {
+
+
+    color:#aaa;
+
+
+    text-decoration:none;
+
+
+    font-size:13px;
+
+
+    margin:8px 0;
+
+
+    letter-spacing:.1em;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.journey-menu a:hover {
+
+
+    color:white;
+
+
+    transform:translateX(8px);
+
+
+}
+
+/* =========================
+   CURRENT LIFESTYLE SECTION
+========================= */
+
+
+.current-section {
+
+    width:min(1100px,90%);
+
+    margin:160px auto;
+
+    text-align:center;
+
+}
+
+
+
+.coming-container {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:40px;
+
+    margin-top:70px;
+
+}
+
+
+
+.coming-card {
+
+
+    position:relative;
+
+
+    padding:50px 40px;
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        #181818,
+        #050505
+    );
+
+
+    border-radius:30px;
+
+
+    border:1px solid rgba(255,255,255,.15);
+
+
+    box-shadow:
+
+    0 30px 80px rgba(0,0,0,.8);
+
+
+    transition:.5s ease;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+.coming-card:hover {
+
+
+    transform:
+
+    translateY(-15px);
+
+
+    border-color:white;
+
+
+    box-shadow:
+
+    0 40px 100px rgba(255,255,255,.15);
+
+
+}
+
+
+
+.coming-number {
+
+
+    font-size:80px;
+
+
+    font-weight:900;
+
+
+    color:rgba(255,255,255,.08);
+
+
+    position:absolute;
+
+
+    top:10px;
+
+    right:30px;
+
+
+}
+
+
+
+.coming-card h3 {
+
+
+    font-size:35px;
+
+
+    margin-top:30px;
+
+
+}
+
+
+
+.coming-card p {
+
+
+    margin:30px 0;
+
+
+    font-size:25px;
+
+
+    letter-spacing:.2em;
+
+
+    text-transform:uppercase;
+
+
+    color:#aaa;
+
+
+}
+
+
+
+.coming-card span {
+
+
+    color:#ccc;
+
+
+    line-height:1.8;
+
+
+}
+
+/* =========================
+   INTRO IMAGE SIZE
+========================= */
+
+
+.intro {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:80px;
+
+    width:min(1100px,90%);
+
+    margin:120px auto;
+
+}
+
+
+
+.intro-image {
+
+
+    flex:0 0 380px;
+
+
+}
+
+
+
+.intro-image img {
+
+
+    width:100%;
+
+
+    height:520px;
+
+
+    object-fit:cover;
+
+
+    border-radius:30px;
+
+
+    box-shadow:
+
+    0 30px 70px rgba(0,0,0,.7);
+
+
+    transition:.5s ease;
+
+
+}
+
+
+
+.intro-image img:hover {
+
+
+    transform:scale(1.05);
+
+
+}
+
+/* =========================
+   INTRO SECTION
+========================= */
+
+
+.intro {
+
+    width:min(1000px,90%);
+
+    margin:140px auto;
+
+    display:flex;
+
+    flex-direction:row;
+
+    align-items:center;
+
+    gap:45px;
+
+}
+
+
+/* LEFT PHOTO */
+
+.intro-image {
+
+    flex:0 0 300px;
+
+}
+
+
+.intro-image img {
+
+    width:100%;
+
+    height:450px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 30px 70px rgba(0,0,0,.7);
+
+}
+
+
+
+.intro-image img {
+
+
+    width:100%;
+
+
+    height:520px;
+
+
+    object-fit:cover;
+
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+    0 40px 80px rgba(0,0,0,.7);
+
+
+    transition:.5s ease;
+
+
+}
+
+
+
+.intro-image:hover img {
+
+
+    transform:
+
+    scale(1.05);
+
+
+}
+
+
+
+/* RIGHT STORY */
+
+.intro-text {
+
+    flex:1;
+
+    padding:35px;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        #151515,
+        #080808
+    );
+
+    border-radius:25px;
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.6);
+
+}
+
+
+.intro-text:hover {
+
+
+    transform:
+
+    translateY(-10px);
+
+
+    border-color:white;
+
+
+}
+
+
+
+.intro-text h2 {
+
+    font-size:36px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.intro-text p {
+
+
+    color:#ccc;
+
+
+    font-size:17px;
+
+
+    line-height:2;
+
+
+}
+
