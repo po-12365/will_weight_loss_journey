@@ -150,45 +150,7 @@ body {
 }
 
 
-.hero {
 
-
-animation:
-
-heroFloat 10s ease-in-out infinite;
-
-}
-
-
-
-@keyframes heroFloat {
-
-
-0%{
-
-transform:
-translateY(0);
-
-}
-
-
-50%{
-
-transform:
-translateY(-15px);
-
-}
-
-
-100%{
-
-transform:
-translateY(0);
-
-}
-
-
-}
 
 
 
@@ -267,7 +229,8 @@ translateY(0);
 }
 
 
-.routine-card {
+
+.routine-card p {
 
     color:#ccc;
 
@@ -299,8 +262,7 @@ translateY(0);
 
     border-radius:20px;
 
-    border:
-    1px solid rgba(255,255,255,.08);
+    transition:.5s ease;
 
 }
 
@@ -962,135 +924,41 @@ translateY(0);
 
 
 
-//* =========================
-   INTRO STORY SECTION
-========================= */
-
-.intro {
-
-    width:min(1100px,90%);
-
-    margin:140px auto;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:60px;
-
-    background:#111;
-
-    padding:50px;
-
-    border-radius:30px;
-
-    box-shadow:
-    0 30px 80px rgba(0,0,0,.7);
-
-}
-
-
-
 /* =========================
-   INTRO IMAGE
+   STORY TITLE
 ========================= */
-
-
-.intro-image {
-
-    flex:0 0 360px;
-
-}
-
-
-
-.intro-image img {
-
-    width:100%;
-
-    height:500px;
-
-    object-fit:cover;
-
-    object-position:center;
-
-    display:block;
-
-    border-radius:25px;
-
-    box-shadow:
-
-    0 25px 60px rgba(0,0,0,.7);
-
-    transition:.5s ease;
-
-}
-
-
-
-.intro-image img:hover {
-
-    transform:scale(1.04);
-
-}
-
-
-
-/* =========================
-   INTRO TEXT BOX
-========================= */
-
-
-.intro-text {
-
-    flex:1;
-
-    max-width:550px;
-
-    padding:40px;
-
-    background:
-
-    linear-gradient(
-        145deg,
-        #181818,
-        #080808
-    );
-
-    border-radius:25px;
-
-    border:
-
-    1px solid rgba(255,255,255,.15);
-
-
-    box-shadow:
-
-    0 25px 60px rgba(0,0,0,.6);
-
-}
-
 
 
 .intro-text h2 {
 
-    font-size:38px;
+    font-size:36px;
+
+    font-weight:800;
 
     margin-bottom:25px;
 
     color:white;
 
+    letter-spacing:-.02em;
+
 }
 
 
 
+/* =========================
+   STORY PARAGRAPH
+========================= */
+
+
 .intro-text p {
 
-    color:#ccc;
+    color:#d0d0d0;
 
     font-size:17px;
 
-    line-height:1.9;
+    line-height:2;
+
+    margin-bottom:20px;
 
 }
 
@@ -1232,230 +1100,6 @@ translateY(0);
         font-size:38px;
 
     }
-
-
-}
-
-/* =========================
-   ANIMATED BACKGROUND
-========================= */
-
-
-body {
-
-    background:
-    radial-gradient(
-        circle at 20% 20%,
-        rgba(255,255,255,.08),
-        transparent 35%
-    ),
-
-    radial-gradient(
-        circle at 80% 70%,
-        rgba(255,255,255,.05),
-        transparent 35%
-    ),
-
-    #080808;
-
-    background-size:200% 200%;
-
-    animation:
-
-    backgroundMove 18s ease infinite;
-
-}
-
-
-
-@keyframes backgroundMove {
-
-
-    0% {
-
-        background-position:
-        0% 0%;
-
-    }
-
-
-    50% {
-
-        background-position:
-        100% 100%;
-
-    }
-
-
-    100% {
-
-        background-position:
-        0% 0%;
-
-    }
-
-}
-
-/* =========================
-   3D CARD EFFECT
-========================= */
-
-
-.routine-card,
-.timeline-item,
-.coming-card,
-.intro-text,
-.transformation-card {
-
-
-    transform-style:preserve-3d;
-
-    perspective:1000px;
-
-    transition:
-
-    transform .6s ease,
-
-    box-shadow .6s ease;
-
-}
-
-
-
-.routine-card:hover,
-.timeline-item:hover,
-.coming-card:hover,
-.intro-text:hover {
-
-
-    transform:
-
-    translateY(-15px)
-
-    rotateX(4deg)
-
-    rotateY(-3deg);
-
-
-    box-shadow:
-
-    0 50px 120px rgba(0,0,0,.9);
-
-}
-
-/* =========================
-   GLASS LIGHT SWEEP
-========================= */
-
-
-.routine-card::before,
-.timeline-item::before,
-.coming-card::before,
-.intro-text::before {
-
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.15),
-        transparent
-    );
-
-
-    transform:
-    translateX(-120%);
-
-
-    transition:.8s;
-
-}
-
-
-
-.routine-card:hover::before,
-.timeline-item:hover::before,
-.coming-card:hover::before,
-.intro-text:hover::before {
-
-
-    transform:
-    translateX(120%);
-
-}
-
-body::before {
-
-
-content:"";
-
-position:fixed;
-
-width:500px;
-
-height:500px;
-
-top:20%;
-
-left:-200px;
-
-
-background:
-
-radial-gradient(
-circle,
-rgba(255,255,255,.12),
-transparent 70%
-);
-
-
-filter:blur(50px);
-
-animation:
-
-glowMove 15s infinite;
-
-
-pointer-events:none;
-
-z-index:-1;
-
-}
-
-
-
-@keyframes glowMove {
-
-
-0%{
-
-transform:
-translate(0,0);
-
-}
-
-
-50%{
-
-transform:
-translate(300px,200px);
-
-}
-
-
-100%{
-
-transform:
-translate(0,0);
-
-}
 
 
 }

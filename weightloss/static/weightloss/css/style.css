@@ -45,55 +45,28 @@ body {
 
     overflow:hidden;
 
+
     background:
 
-    linear-gradient(
-        rgba(0,0,0,.55),
-        rgba(0,0,0,.85)
+    radial-gradient(
+        circle at center,
+        rgba(255,255,255,.18),
+        transparent 45%
     ),
 
-    url("../images/gym-background.jpg");
+    linear-gradient(
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.95)
+    ),
+
+    #050505;
+
 
     background-size:cover;
 
     background-position:center;
 
-
 }
-
-
-/* gym light effect */
-
-.hero::before {
-
-    content:"";
-
-    position:absolute;
-
-    width:500px;
-
-    height:500px;
-
-    background:
-
-    radial-gradient(
-        circle,
-        rgba(255,255,255,.25),
-        transparent 70%
-    );
-
-
-    top:10%;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    filter:blur(30px);
-
-}
-
-
 
 /* hero text */
 
@@ -177,7 +150,45 @@ body {
 }
 
 
+.hero {
 
+
+animation:
+
+heroFloat 10s ease-in-out infinite;
+
+}
+
+
+
+@keyframes heroFloat {
+
+
+0%{
+
+transform:
+translateY(0);
+
+}
+
+
+50%{
+
+transform:
+translateY(-15px);
+
+}
+
+
+100%{
+
+transform:
+translateY(0);
+
+}
+
+
+}
 
 
 
@@ -189,11 +200,9 @@ body {
 
 .journey-section {
 
-
     width:min(900px,90%);
 
     margin:150px auto;
-
 
 }
 
@@ -201,11 +210,9 @@ body {
 
 .section-title {
 
-
     text-align:center;
 
     margin-bottom:80px;
-
 
 }
 
@@ -213,13 +220,11 @@ body {
 
 .section-title span {
 
-
     letter-spacing:.4em;
 
     color:#888;
 
     font-size:12px;
-
 
 }
 
@@ -227,11 +232,9 @@ body {
 
 .section-title h2 {
 
-
     font-size:50px;
 
     margin-top:20px;
-
 
 }
 
@@ -244,37 +247,27 @@ body {
 
 .routine-card {
 
+    background:
 
-  background:
-linear-gradient(
-rgba(0,0,0,.55),
-rgba(0,0,0,.85)
-),
-url("/static/weightloss/images/2019.jpg");
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.85)
+    ),
+
+    #111;
 
     padding:60px;
 
-
     border-radius:25px;
-
 
     box-shadow:
 
-
     0 30px 80px rgba(0,0,0,.7);
-
-
-    transform:
-    perspective(1000px)
-    rotateX(3deg);
-
 
 }
 
 
-
-.routine-card p {
-
+.routine-card {
 
     color:#ccc;
 
@@ -284,14 +277,16 @@ url("/static/weightloss/images/2019.jpg");
 
     margin-bottom:30px;
 
-
 }
+
+
 
 .timeline {
 
     position:relative;
 
 }
+
 
 
 .timeline-item {
@@ -304,7 +299,24 @@ url("/static/weightloss/images/2019.jpg");
 
     border-radius:20px;
 
+    border:
+    1px solid rgba(255,255,255,.08);
+
 }
+
+
+
+.timeline-item:hover {
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+    0 30px 70px rgba(255,255,255,.1);
+
+}
+
+
 
 /* =========================
    TRANSFORMATION GALLERY
@@ -325,8 +337,7 @@ url("/static/weightloss/images/2019.jpg");
 
     display:grid;
 
-    grid-template-columns:
-    repeat(2, 1fr);
+    grid-template-columns:repeat(2,1fr);
 
     gap:40px;
 
@@ -345,12 +356,15 @@ url("/static/weightloss/images/2019.jpg");
     background:#111;
 
     box-shadow:
+
     0 30px 70px rgba(0,0,0,.7);
 
     aspect-ratio:2 / 4;
 
     transform:
+
     perspective(1000px)
+
     rotateY(2deg);
 
     transition:.5s ease;
@@ -361,13 +375,13 @@ url("/static/weightloss/images/2019.jpg");
 
 .transformation-card:hover {
 
-
     transform:
 
     perspective(1000px)
-    translateY(-15px)
-    rotateY(0deg);
 
+    translateY(-15px)
+
+    rotateY(0deg);
 
 }
 
@@ -375,23 +389,17 @@ url("/static/weightloss/images/2019.jpg");
 
 .transformation-card img {
 
-
     width:100%;
 
     height:100%;
 
-
     object-fit:cover;
-
 
     object-position:center;
 
-
     display:block;
 
-
     transition:.8s ease;
-
 
 }
 
@@ -399,16 +407,13 @@ url("/static/weightloss/images/2019.jpg");
 
 .transformation-card:hover img {
 
-
     transform:scale(1.08);
-
 
 }
 
 
 
 .photo-info {
-
 
     position:absolute;
 
@@ -418,9 +423,9 @@ url("/static/weightloss/images/2019.jpg");
 
     right:0;
 
-
     padding:35px;
 
+    z-index:3;
 
     background:
 
@@ -429,25 +434,21 @@ url("/static/weightloss/images/2019.jpg");
         rgba(0,0,0,.9)
     );
 
-
 }
 
 
 
 .photo-info h3 {
 
-
     font-size:42px;
 
     margin-bottom:10px;
-
 
 }
 
 
 
 .photo-info p {
-
 
     color:#ddd;
 
@@ -455,25 +456,47 @@ url("/static/weightloss/images/2019.jpg");
 
 }
 
-.photo-info p {
 
 
-    color:#ddd;
+/* shine effect */
+
+.transformation-card::after {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:2;
+
+    background:
+
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    transform:translateX(-120%);
+
+    transition:.8s;
 
 }
 
-body {
 
-    background:#080808;
 
-    color:white;
+.transformation-card:hover::after {
+
+    transform:translateX(120%);
 
 }
 
 
 
 /* =========================
-   SMOOTH PAGE REVEAL
+   SMOOTH REVEAL
 ========================= */
 
 
@@ -512,248 +535,21 @@ body {
 
 
 /* =========================
-   WHITE CONTRAST SECTIONS
-========================= */
-
-
-.intro {
-
-    background:#f5f5f5;
-
-    color:#111;
-
-    padding:80px;
-
-    border-radius:30px;
-
-
-}
-
-
-
-.intro-text p {
-
-    color:#444;
-
-}
-
-
-
-/* =========================
-   HERO EFFECT
-========================= */
-
-
-.hero {
-
-
-    background:
-
-    radial-gradient(
-        circle at center,
-        rgba(255,255,255,.15),
-        transparent 45%
-    ),
-
-    #050505;
-
-
-}
-
-
-
-.hero h1 {
-
-
-    animation:titleFloat 1.5s ease;
-
-
-}
-
-
-
-@keyframes titleFloat {
-
-
-    from {
-
-        opacity:0;
-
-        transform:translateY(40px);
-
-    }
-
-
-    to {
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-
-
-
-/* =========================
-   CARD HOVER EFFECT
-========================= */
-
-
-.routine-card,
-.timeline-item,
-.transformation-card {
-
-
-    transition:
-
-    transform .5s ease,
-
-    box-shadow .5s ease;
-
-
-}
-
-
-
-.routine-card:hover,
-.timeline-item:hover {
-
-
-    transform:
-
-    translateY(-12px)
-
-    scale(1.02);
-
-
-    box-shadow:
-
-    0 40px 100px rgba(255,255,255,.15);
-
-
-}
-
-
-
-/* =========================
-   IMAGE HOVER
-========================= */
-
-
-.transformation-card {
-
-
-    overflow:hidden;
-
-
-}
-
-
-
-.transformation-card img {
-
-
-    filter:
-
-    grayscale(30%);
-
-
-}
-
-
-
-.transformation-card:hover img {
-
-
-    transform:scale(1.12);
-
-
-    filter:
-
-    grayscale(0%);
-
-
-}
-
-
-
-/* =========================
-   PHOTO LIGHT EFFECT
-========================= */
-
-
-.transformation-card::after {
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    inset:0;
-
-
-    background:
-
-    linear-gradient(
-
-    120deg,
-
-    transparent,
-
-    rgba(255,255,255,.25),
-
-    transparent
-
-    );
-
-
-    transform:translateX(-120%);
-
-
-    transition:.8s;
-
-
-}
-
-
-
-.transformation-card:hover::after {
-
-
-    transform:translateX(120%);
-
-
-}
-
-
-
-/* =========================
    WEIGHT NUMBER STYLE
 ========================= */
 
 
 .timeline-weight {
 
-
     font-size:70px;
-
 
     font-weight:900;
 
-
     color:white;
-
 
     letter-spacing:-3px;
 
-
     transition:.4s;
-
 
 }
 
@@ -761,12 +557,9 @@ body {
 
 .timeline-item:hover .timeline-weight {
 
-
     transform:scale(1.1);
 
-
 }
-
 
 
 
@@ -791,94 +584,66 @@ body {
 
 .back-top {
 
-
     display:flex;
 
     justify-content:center;
 
     align-items:center;
 
-
     width:180px;
 
     height:55px;
 
-
     border-radius:40px;
-
 
     background:#000;
 
-
     color:white;
-
 
     border:1px solid white;
 
-
     text-decoration:none;
-
 
     font-size:14px;
 
-
     letter-spacing:.2em;
-
 
     text-transform:uppercase;
 
-
     transition:.5s ease;
-
 
     position:relative;
 
-
     overflow:hidden;
-
 
 }
 
 
 
-/* light sweep effect */
-
 .back-top::before {
-
 
     content:"";
 
-
     position:absolute;
-
 
     top:0;
 
     left:-100%;
 
-
     width:100%;
 
     height:100%;
 
-
     background:
 
     linear-gradient(
-
-    120deg,
-
-    transparent,
-
-    rgba(255,255,255,.5),
-
-    transparent
-
+        120deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
     );
 
-
     transition:.6s;
-
 
 }
 
@@ -886,9 +651,7 @@ body {
 
 .back-top:hover::before {
 
-
     left:100%;
-
 
 }
 
@@ -896,65 +659,50 @@ body {
 
 .back-top:hover {
 
-
     background:white;
-
 
     color:black;
 
-
     transform:translateY(-10px);
-
 
     box-shadow:
 
     0 20px 40px rgba(255,255,255,.2);
 
-
 }
 
+
+
 /* =========================
-   JOURNEY COVER MENU
+   JOURNEY MENU
 ========================= */
 
 
 .journey-menu {
 
-
     position:fixed;
-
 
     top:40px;
 
     left:40px;
 
-
     z-index:999;
-
 
     display:flex;
 
     flex-direction:column;
 
-
     padding:25px;
-
 
     background:
 
     rgba(0,0,0,.65);
 
-
     backdrop-filter:blur(10px);
 
-
-    border:
-
-    1px solid rgba(255,255,255,.2);
-
+    border:1px solid rgba(255,255,255,.2);
 
     border-radius:20px;
-
 
 }
 
@@ -962,18 +710,13 @@ body {
 
 .journey-menu h3 {
 
-
     color:white;
-
 
     font-size:14px;
 
-
     letter-spacing:.25em;
 
-
     margin-bottom:20px;
-
 
 }
 
@@ -981,24 +724,17 @@ body {
 
 .journey-menu a {
 
-
     color:#aaa;
-
 
     text-decoration:none;
 
-
     font-size:13px;
-
 
     margin:8px 0;
 
-
     letter-spacing:.1em;
 
-
     transition:.4s;
-
 
 }
 
@@ -1006,17 +742,16 @@ body {
 
 .journey-menu a:hover {
 
-
     color:white;
-
 
     transform:translateX(8px);
 
-
 }
 
+
+
 /* =========================
-   CURRENT LIFESTYLE SECTION
+   CURRENT LIFESTYLE
 ========================= */
 
 
@@ -1036,8 +771,7 @@ body {
 
     display:grid;
 
-    grid-template-columns:
-    repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 
     gap:40px;
 
@@ -1049,12 +783,9 @@ body {
 
 .coming-card {
 
-
     position:relative;
 
-
     padding:50px 40px;
-
 
     background:
 
@@ -1064,23 +795,17 @@ body {
         #050505
     );
 
-
     border-radius:30px;
 
-
     border:1px solid rgba(255,255,255,.15);
-
 
     box-shadow:
 
     0 30px 80px rgba(0,0,0,.8);
 
-
     transition:.5s ease;
 
-
     overflow:hidden;
-
 
 }
 
@@ -1088,19 +813,9 @@ body {
 
 .coming-card:hover {
 
-
-    transform:
-
-    translateY(-15px);
-
+    transform:translateY(-15px);
 
     border-color:white;
-
-
-    box-shadow:
-
-    0 40px 100px rgba(255,255,255,.15);
-
 
 }
 
@@ -1108,144 +823,56 @@ body {
 
 .coming-number {
 
-
     font-size:80px;
-
 
     font-weight:900;
 
-
     color:rgba(255,255,255,.08);
 
-
     position:absolute;
-
 
     top:10px;
 
     right:30px;
 
-
 }
-
 
 
 .coming-card h3 {
 
-
     font-size:35px;
-
 
     margin-top:30px;
 
-
 }
-
 
 
 .coming-card p {
 
-
     margin:30px 0;
-
 
     font-size:25px;
 
-
     letter-spacing:.2em;
-
 
     text-transform:uppercase;
 
-
     color:#aaa;
 
-
 }
-
 
 
 .coming-card span {
 
-
     color:#ccc;
-
 
     line-height:1.8;
 
-
 }
 
 /* =========================
-   INTRO IMAGE SIZE
+   RIGHT STORY BOX
 ========================= */
-
-
-.intro {
-
-    display:flex;
-
-    align-items:center;
-
-    gap:80px;
-
-    width:min(1100px,90%);
-
-    margin:120px auto;
-
-}
-
-
-
-.intro-image {
-
-
-    flex:0 0 380px;
-
-
-}
-
-
-
-.intro-image img {
-
-
-    width:100%;
-
-
-    height:520px;
-
-
-    object-fit:cover;
-
-
-    border-radius:30px;
-
-
-    box-shadow:
-
-    0 30px 70px rgba(0,0,0,.7);
-
-
-    transition:.5s ease;
-
-
-}
-
-
-
-.intro-image img:hover {
-
-
-    transform:scale(1.05);
-
-
-}
-
-/* =========================
-   INTRO SECTION
-========================= */
-
 
 .intro {
 
@@ -1259,113 +886,187 @@ body {
 
     align-items:center;
 
-    gap:45px;
+    gap:50px;
 
-}
+    background:#111;
 
+    padding:45px;
 
-/* LEFT PHOTO */
-
-.intro-image {
-
-    flex:0 0 300px;
-
-}
-
-
-.intro-image img {
-
-    width:100%;
-
-    height:450px;
-
-    object-fit:cover;
-
-    border-radius:25px;
+    border-radius:30px;
 
     box-shadow:
-    0 30px 70px rgba(0,0,0,.7);
+    0 30px 80px rgba(0,0,0,.7);
 
 }
 
-
-
-.intro-image img {
-
-
-    width:100%;
-
-
-    height:520px;
-
-
-    object-fit:cover;
-
-
-    border-radius:25px;
-
-
-    box-shadow:
-
-    0 40px 80px rgba(0,0,0,.7);
-
-
-    transition:.5s ease;
-
-
-}
-
-
-
-.intro-image:hover img {
-
-
-    transform:
-
-    scale(1.05);
-
-
-}
-
-
-
-/* RIGHT STORY */
 
 .intro-text {
 
     flex:1;
 
-    padding:35px;
+    padding:40px;
+
 
     background:
 
     linear-gradient(
         145deg,
-        #151515,
+        rgba(24,24,24,.95),
+        rgba(8,8,8,.95)
+    );
+
+
+    border-radius:25px;
+
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.6);
+
+
+    backdrop-filter:blur(10px);
+
+
+    transition:
+
+    transform .5s ease,
+
+    box-shadow .5s ease,
+
+    border-color .5s ease;
+
+}
+
+
+
+.intro-text:hover {
+
+    transform:translateY(-10px);
+
+
+    border-color:
+
+    rgba(255,255,255,.8);
+
+
+    box-shadow:
+
+    0 40px 90px rgba(0,0,0,.8);
+
+}
+
+
+
+//* =========================
+   INTRO STORY SECTION
+========================= */
+
+.intro {
+
+    width:min(1100px,90%);
+
+    margin:140px auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:60px;
+
+    background:#111;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.7);
+
+}
+
+
+
+/* =========================
+   INTRO IMAGE
+========================= */
+
+
+.intro-image {
+
+    flex:0 0 360px;
+
+}
+
+
+
+.intro-image img {
+
+    width:100%;
+
+    height:500px;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    display:block;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.7);
+
+    transition:.5s ease;
+
+}
+
+
+
+.intro-image img:hover {
+
+    transform:scale(1.04);
+
+}
+
+
+
+/* =========================
+   INTRO TEXT BOX
+========================= */
+
+
+.intro-text {
+
+    flex:1;
+
+    max-width:550px;
+
+    padding:40px;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        #181818,
         #080808
     );
 
     border-radius:25px;
 
     border:
+
     1px solid rgba(255,255,255,.15);
 
+
     box-shadow:
+
     0 25px 60px rgba(0,0,0,.6);
-
-}
-
-
-.intro-text:hover {
-
-
-    transform:
-
-    translateY(-10px);
-
-
-    border-color:white;
-
 
 }
 
@@ -1373,9 +1074,11 @@ body {
 
 .intro-text h2 {
 
-    font-size:36px;
+    font-size:38px;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
+
+    color:white;
 
 }
 
@@ -1383,15 +1086,376 @@ body {
 
 .intro-text p {
 
-
     color:#ccc;
-
 
     font-size:17px;
 
+    line-height:1.9;
 
-    line-height:2;
+}
+
+
+/* =========================
+   MOBILE INTRO
+========================= */
+
+
+@media(max-width:768px){
+
+
+    .intro {
+
+        flex-direction:column;
+
+        padding:25px;
+
+        gap:30px;
+
+    }
+
+
+    .intro-image {
+
+        flex:unset;
+
+        width:100%;
+
+    }
+
+
+    .intro-image img {
+
+        height:400px;
+
+    }
+
+
+    .intro-text {
+
+        padding:25px;
+
+    }
+
+
+    .intro-text h2 {
+
+        font-size:28px;
+
+    }
 
 
 }
 
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+
+    .journey-menu {
+
+        top:20px;
+
+        left:20px;
+
+        padding:15px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:45px;
+
+    }
+
+
+    .hero-description {
+
+        font-size:16px;
+
+        padding:20px;
+
+    }
+
+
+    .transformation-gallery,
+    .coming-container {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .intro {
+
+        flex-direction:column;
+
+        padding:25px;
+
+    }
+
+
+    .intro-image {
+
+        flex:unset;
+
+        width:100%;
+
+    }
+
+
+    .intro-image img {
+
+        height:400px;
+
+    }
+
+
+    .intro-text {
+
+        padding:25px;
+
+    }
+
+
+    .intro-text h2 {
+
+        font-size:28px;
+
+    }
+
+
+    .section-title h2 {
+
+        font-size:38px;
+
+    }
+
+
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+
+body {
+
+    background:
+    radial-gradient(
+        circle at 20% 20%,
+        rgba(255,255,255,.08),
+        transparent 35%
+    ),
+
+    radial-gradient(
+        circle at 80% 70%,
+        rgba(255,255,255,.05),
+        transparent 35%
+    ),
+
+    #080808;
+
+    background-size:200% 200%;
+
+    animation:
+
+    backgroundMove 18s ease infinite;
+
+}
+
+
+
+@keyframes backgroundMove {
+
+
+    0% {
+
+        background-position:
+        0% 0%;
+
+    }
+
+
+    50% {
+
+        background-position:
+        100% 100%;
+
+    }
+
+
+    100% {
+
+        background-position:
+        0% 0%;
+
+    }
+
+}
+
+/* =========================
+   3D CARD EFFECT
+========================= */
+
+
+.routine-card,
+.timeline-item,
+.coming-card,
+.intro-text,
+.transformation-card {
+
+
+    transform-style:preserve-3d;
+
+    perspective:1000px;
+
+    transition:
+
+    transform .6s ease,
+
+    box-shadow .6s ease;
+
+}
+
+
+
+.routine-card:hover,
+.timeline-item:hover,
+.coming-card:hover,
+.intro-text:hover {
+
+
+    transform:
+
+    translateY(-15px)
+
+    rotateX(4deg)
+
+    rotateY(-3deg);
+
+
+    box-shadow:
+
+    0 50px 120px rgba(0,0,0,.9);
+
+}
+
+/* =========================
+   GLASS LIGHT SWEEP
+========================= */
+
+
+.routine-card::before,
+.timeline-item::before,
+.coming-card::before,
+.intro-text::before {
+
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.15),
+        transparent
+    );
+
+
+    transform:
+    translateX(-120%);
+
+
+    transition:.8s;
+
+}
+
+
+
+.routine-card:hover::before,
+.timeline-item:hover::before,
+.coming-card:hover::before,
+.intro-text:hover::before {
+
+
+    transform:
+    translateX(120%);
+
+}
+
+body::before {
+
+
+content:"";
+
+position:fixed;
+
+width:500px;
+
+height:500px;
+
+top:20%;
+
+left:-200px;
+
+
+background:
+
+radial-gradient(
+circle,
+rgba(255,255,255,.12),
+transparent 70%
+);
+
+
+filter:blur(50px);
+
+animation:
+
+glowMove 15s infinite;
+
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+
+
+@keyframes glowMove {
+
+
+0%{
+
+transform:
+translate(0,0);
+
+}
+
+
+50%{
+
+transform:
+translate(300px,200px);
+
+}
+
+
+100%{
+
+transform:
+translate(0,0);
+
+}
+
+
+}
