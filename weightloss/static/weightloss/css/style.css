@@ -154,8 +154,7 @@ body {
 
 
 animation:
-
-heroFloat 10s ease-in-out infinite;
+none;
 
 }
 
@@ -235,84 +234,6 @@ translateY(0);
     font-size:50px;
 
     margin-top:20px;
-
-}
-
-
-
-/* =========================
-   ROUTINE CARD
-========================= */
-
-
-.routine-card {
-
-    background:
-
-    linear-gradient(
-        rgba(0,0,0,.55),
-        rgba(0,0,0,.85)
-    ),
-
-    #111;
-
-    padding:60px;
-
-    border-radius:25px;
-
-    box-shadow:
-
-    0 30px 80px rgba(0,0,0,.7);
-
-}
-
-
-.routine-card {
-
-    color:#ccc;
-
-    line-height:2;
-
-    font-size:18px;
-
-    margin-bottom:30px;
-
-}
-
-
-
-.timeline {
-
-    position:relative;
-
-}
-
-
-
-.timeline-item {
-
-    background:#111;
-
-    padding:40px;
-
-    margin-bottom:40px;
-
-    border-radius:20px;
-
-    border:
-    1px solid rgba(255,255,255,.08);
-
-}
-
-
-
-.timeline-item:hover {
-
-    transform:translateY(-10px);
-
-    box-shadow:
-
-    0 30px 70px rgba(255,255,255,.1);
 
 }
 
@@ -553,7 +474,13 @@ translateY(0);
 
 }
 
+.timeline-item {
 
+    position:relative;
+
+    overflow:hidden;
+
+}
 
 .timeline-item:hover .timeline-weight {
 
@@ -809,7 +736,13 @@ translateY(0);
 
 }
 
+.coming-card {
 
+    position:relative;
+
+    overflow:hidden;
+
+}
 
 .coming-card:hover {
 
@@ -871,26 +804,25 @@ translateY(0);
 }
 
 /* =========================
-   RIGHT STORY BOX
+   INTRO STORY SECTION
 ========================= */
+
 
 .intro {
 
-    width:min(1000px,90%);
+    width:min(950px,90%);
 
-    margin:140px auto;
+    margin:120px auto;
 
     display:flex;
 
-    flex-direction:row;
-
     align-items:center;
 
-    gap:50px;
+    gap:40px;
+
+    padding:35px;
 
     background:#111;
-
-    padding:45px;
 
     border-radius:30px;
 
@@ -900,19 +832,74 @@ translateY(0);
 }
 
 
+
+/* =========================
+   INTRO IMAGE
+========================= */
+
+
+.intro-image {
+
+    flex:0 0 300px;
+
+}
+
+
+.intro-image img {
+
+
+    width:100%;
+
+    height:430px;
+
+    object-fit:cover;
+
+    object-position:center top;
+
+    border-radius:25px;
+
+    display:block;
+
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.7);
+
+
+    transition:.5s ease;
+
+}
+
+
+
+.intro-image img:hover {
+
+    transform:scale(1.03);
+
+}
+
+
+
+/* =========================
+   STORY BOX
+========================= */
+
+
 .intro-text {
+
 
     flex:1;
 
-    padding:40px;
+
+    padding:35px;
 
 
     background:
 
     linear-gradient(
         145deg,
-        rgba(24,24,24,.95),
-        rgba(8,8,8,.95)
+        #181818,
+        #080808
     );
 
 
@@ -929,216 +916,46 @@ translateY(0);
     0 25px 60px rgba(0,0,0,.6);
 
 
-    backdrop-filter:blur(10px);
+}
+
+.intro-text {
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.intro-text h2 {
 
 
-    transition:
+    font-size:34px;
 
-    transform .5s ease,
-
-    box-shadow .5s ease,
-
-    border-color .5s ease;
+    margin-bottom:20px;
 
 }
 
 
 
+.intro-text p {
+
+
+    color:#ccc;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+}
 .intro-text:hover {
 
-    transform:translateY(-10px);
+    transform:
 
+    translateY(-8px)
 
-    border-color:
+    rotateX(2deg)
 
-    rgba(255,255,255,.8);
-
-
-    box-shadow:
-
-    0 40px 90px rgba(0,0,0,.8);
-
-}
-
-
-
-//* =========================
-   INTRO STORY SECTION
-========================= */
-
-.intro {
-
-    width:min(1100px,90%);
-
-    margin:140px auto;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:60px;
-
-    background:#111;
-
-    padding:50px;
-
-    border-radius:30px;
-
-    box-shadow:
-    0 30px 80px rgba(0,0,0,.7);
-
-}
-
-
-
-/* =========================
-   INTRO IMAGE
-========================= */
-
-
-.intro-image {
-
-    flex:0 0 360px;
-
-}
-
-
-
-.intro-image img {
-
-    width:100%;
-
-    height:clamp(380px,70vh,520px);
-
-    object-fit:cover;
-
-    object-position:center top;
-
-    display:block;
-
-    border-radius:25px;
-
-    box-shadow:
-
-    0 25px 60px rgba(0,0,0,.7);
-
-    transition:.5s ease;
-
-}
-
-
-
-.intro-image img:hover {
-
-    transform:scale(1.04);
-
-}
-
-
-
-/* =========================
-   INTRO IMAGE
-========================= */
-
-.intro-image {
-
-    flex:0 0 280px;
-
-}
-
-
-.intro-image img {
-
-    width:100%;
-
-    height:420px;
-
-    object-fit:cover;
-
-    object-position:center top;
-
-    display:block;
-
-    border-radius:25px;
-
-    box-shadow:
-    0 25px 60px rgba(0,0,0,.7);
-
-    transition:.5s ease;
-
-}
-
-
-
-.intro-image img:hover {
-
-    transform:scale(1.04);
-
-}
-
-
-
-/* =========================
-   DESKTOP LARGE SCREEN
-========================= */
-
-@media(min-width:1200px){
-
-    .intro-image {
-
-        flex:0 0 320px;
-
-    }
-
-
-    .intro-image img {
-
-        height:450px;
-
-    }
-
-}
-
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:768px){
-
-    .intro-image {
-
-        flex:unset;
-
-        width:100%;
-
-    }
-
-
-    .intro-image img {
-
-        height:400px;
-
-        object-position:center top;
-
-    }
-
-}
-
-    .intro-text {
-
-        padding:25px;
-
-    }
-
-
-    .intro-text h2 {
-
-        font-size:28px;
-
-    }
-
+    rotateY(-2deg);
 
 }
 
@@ -1146,30 +963,8 @@ translateY(0);
    MOBILE RESPONSIVE
 ========================= */
 
+
 @media(max-width:768px){
-
-    .intro-image {
-
-        width:100%;
-
-    }
-
-
-    .intro-image img {
-
-        width:100%;
-
-        height:450px;
-
-        object-fit:cover;
-
-        object-position:center top;
-
-        border-radius:25px;
-
-    }
-
-}
 
 
     .hero h1 {
@@ -1217,6 +1012,8 @@ translateY(0);
     .intro-image img {
 
         height:400px;
+
+        object-position:center top;
 
     }
 
@@ -1309,161 +1106,137 @@ body {
 ========================= */
 
 
+.routine-card {
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.85)
+    ),
+
+    #111;
+
+
+    padding:60px;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.7);
+
+
+    color:#ccc;
+
+    line-height:2;
+
+    font-size:18px;
+
+    margin-bottom:30px;
+
+}
+/* =========================
+   GLASS LIGHT SWEEP
+========================= */
+
+
 .routine-card,
 .timeline-item,
 .coming-card,
 .intro-text,
 .transformation-card {
 
-
-    transform-style:preserve-3d;
-
-    perspective:1000px;
-
-    transition:
-
-    transform .6s ease,
-
-    box-shadow .6s ease;
+    animation:
+    cardFloat 8s ease-in-out infinite;
 
 }
-
 
 
 .routine-card:hover,
 .timeline-item:hover,
 .coming-card:hover,
-.intro-text:hover {
+.intro-text:hover,
+.transformation-card:hover {
 
+    animation:none;
 
-    transform:
+}
 
-    translateY(-15px)
+.routine-card {
 
-    rotateX(4deg)
+    position:relative;
 
-    rotateY(-3deg);
-
-
-    box-shadow:
-
-    0 50px 120px rgba(0,0,0,.9);
+    overflow:hidden;
 
 }
 
 /* =========================
-   GLASS LIGHT SWEEP
+   FLOATING BACKGROUND EFFECT
 ========================= */
-
-
-.routine-card::before,
-.timeline-item::before,
-.coming-card::before,
-.intro-text::before {
-
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.15),
-        transparent
-    );
-
-
-    transform:
-    translateX(-120%);
-
-
-    transition:.8s;
-
-}
-
-
-
-.routine-card:hover::before,
-.timeline-item:hover::before,
-.coming-card:hover::before,
-.intro-text:hover::before {
-
-
-    transform:
-    translateX(120%);
-
-}
 
 body::before {
 
+    content:"";
 
-content:"";
+    position:fixed;
 
-position:fixed;
+    width:600px;
 
-width:500px;
+    height:600px;
 
-height:500px;
+    top:10%;
 
-top:20%;
+    left:-200px;
 
-left:-200px;
+    background:
 
+    radial-gradient(
+        circle,
+        rgba(255,255,255,.12),
+        transparent 70%
+    );
 
-background:
+    filter:blur(60px);
 
-radial-gradient(
-circle,
-rgba(255,255,255,.12),
-transparent 70%
-);
+    animation:
 
+    floatingGlow 15s ease-in-out infinite;
 
-filter:blur(50px);
+    pointer-events:none;
 
-animation:
-
-glowMove 15s infinite;
-
-
-pointer-events:none;
-
-z-index:-1;
+    z-index:-1;
 
 }
 
 
 
-@keyframes glowMove {
+@keyframes floatingGlow {
 
 
-0%{
+    0% {
 
-transform:
-translate(0,0);
+        transform:
+        translate(0,0)
+        scale(1);
 
-}
-
-
-50%{
-
-transform:
-translate(300px,200px);
-
-}
+    }
 
 
-100%{
+    50% {
 
-transform:
-translate(0,0);
+        transform:
+        translate(350px,150px)
+        scale(1.2);
 
-}
+    }
 
+
+    100% {
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
 
 }
