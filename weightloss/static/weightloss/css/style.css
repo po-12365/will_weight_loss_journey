@@ -488,7 +488,11 @@ translateY(0);
 
 }
 
+.timeline-item {
 
+    padding:40px;
+
+}
 
 /* =========================
    BACK TO TOP BUTTON
@@ -807,7 +811,6 @@ translateY(0);
    INTRO STORY SECTION
 ========================= */
 
-
 .intro {
 
     width:min(950px,90%);
@@ -820,14 +823,7 @@ translateY(0);
 
     gap:40px;
 
-    padding:35px;
-
-    background:#111;
-
-    border-radius:30px;
-
-    box-shadow:
-    0 30px 80px rgba(0,0,0,.7);
+    padding:40px;
 
 }
 
@@ -1118,7 +1114,7 @@ body {
     #111;
 
 
-    padding:60px;
+    padding:40px;
 
     border-radius:25px;
 
@@ -1238,5 +1234,60 @@ body::before {
         scale(1);
 
     }
+
+}
+
+/* =========================
+   CONSISTENT STORY CARDS
+========================= */
+
+
+.intro,
+.routine-card,
+.timeline-item {
+
+    background:
+
+    linear-gradient(
+        145deg,
+        #151515,
+        #080808
+    );
+
+    border-radius:30px;
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+
+    0 30px 80px rgba(0,0,0,.7);
+
+    transition:.5s ease;
+
+}
+
+
+/* same hover effect */
+
+.intro:hover,
+.routine-card:hover,
+.timeline-item:hover {
+
+    transform:
+
+    translateY(-10px)
+    rotateX(2deg)
+    rotateY(-2deg);
+
+
+    border-color:
+
+    rgba(255,255,255,.5);
+
+
+    box-shadow:
+
+    0 40px 100px rgba(0,0,0,.9);
 
 }
