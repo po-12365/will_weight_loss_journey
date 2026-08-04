@@ -158,7 +158,13 @@ none;
 
 }
 
+.hero-content {
 
+    position:relative;
+
+    z-index:3;
+
+}
 
 @keyframes heroFloat {
 
@@ -1289,5 +1295,156 @@ body::before {
     box-shadow:
 
     0 40px 100px rgba(0,0,0,.9);
+
+}
+
+/* =========================
+   HERO 3D OBJECT EFFECT
+========================= */
+
+
+.hero-object {
+
+    position:absolute;
+
+    right:8%;
+
+    top:50%;
+
+    width:320px;
+
+    transform:
+    translateY(-50%);
+
+    z-index:1;
+
+    animation:
+
+    objectFloat 8s ease-in-out infinite;
+
+}
+
+
+
+/* IMAGE */
+
+.hero-object img {
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+
+    border-radius:30px;
+
+
+    object-fit:cover;
+
+
+    filter:
+
+    grayscale(100%)
+
+    contrast(120%)
+
+    brightness(80%)
+
+    drop-shadow(
+        0 40px 80px rgba(255,255,255,.18)
+    );
+
+
+}
+
+
+
+/* BACK LIGHT */
+
+.object-glow {
+
+
+    position:absolute;
+
+
+    inset:-80px;
+
+
+    background:
+
+
+    radial-gradient(
+        circle,
+        rgba(255,255,255,.18),
+        transparent 70%
+    );
+
+
+    filter:blur(60px);
+
+
+    z-index:-1;
+
+
+}
+
+
+
+/* FLOAT MOTION */
+
+
+@keyframes objectFloat {
+
+
+    0% {
+
+
+        transform:
+
+        translateY(-50%)
+
+        rotateY(0deg);
+
+
+    }
+
+
+    50% {
+
+
+        transform:
+
+        translateY(calc(-50% - 30px))
+
+        rotateY(15deg);
+
+
+    }
+
+
+    100% {
+
+
+        transform:
+
+        translateY(-50%)
+
+        rotateY(0deg);
+
+
+    }
+
+}
+
+@media(max-width:768px){
+
+
+    .hero-object {
+
+        display:none;
+
+    }
+
 
 }
