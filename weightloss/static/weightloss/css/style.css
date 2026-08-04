@@ -1037,82 +1037,75 @@ translateY(0);
 
 
 /* =========================
-   INTRO TEXT BOX
+   INTRO IMAGE
 ========================= */
 
+.intro-image {
 
-.intro-text {
+    flex:0 0 280px;
 
-    flex:1;
+}
 
-    max-width:550px;
 
-    padding:40px;
+.intro-image img {
 
-    background:
+    width:100%;
 
-    linear-gradient(
-        145deg,
-        #181818,
-        #080808
-    );
+    height:420px;
+
+    object-fit:cover;
+
+    object-position:center top;
+
+    display:block;
 
     border-radius:25px;
 
-    border:
-
-    1px solid rgba(255,255,255,.15);
-
-
     box-shadow:
+    0 25px 60px rgba(0,0,0,.7);
 
-    0 25px 60px rgba(0,0,0,.6);
-
-}
-
-
-
-.intro-text h2 {
-
-    font-size:38px;
-
-    margin-bottom:25px;
-
-    color:white;
+    transition:.5s ease;
 
 }
 
 
 
-.intro-text p {
+.intro-image img:hover {
 
-    color:#ccc;
-
-    font-size:17px;
-
-    line-height:1.9;
+    transform:scale(1.04);
 
 }
+
 
 
 /* =========================
-   MOBILE INTRO
+   DESKTOP LARGE SCREEN
 ========================= */
 
+@media(min-width:1200px){
 
-@media(max-width:768px){
+    .intro-image {
 
-
-    .intro {
-
-        flex-direction:column;
-
-        padding:25px;
-
-        gap:30px;
+        flex:0 0 320px;
 
     }
 
+
+    .intro-image img {
+
+        height:450px;
+
+    }
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
 
     .intro-image {
 
@@ -1127,8 +1120,11 @@ translateY(0);
 
         height:400px;
 
+        object-position:center top;
+
     }
 
+}
 
     .intro-text {
 
